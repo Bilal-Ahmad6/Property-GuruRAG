@@ -3,6 +3,7 @@ import sys
 import json
 from pathlib import Path
 from datetime import datetime
+from threading import Thread
 from typing import List, Dict, Any
 
 from flask import Flask, render_template, request, jsonify
@@ -81,6 +82,37 @@ def get_api_key() -> str:
     return os.getenv('COHERE_API_KEY') or os.getenv('ZAMEEN_COHERE_API_KEY') or settings.cohere_api_key
 
 
+def _background_warmup() -> None:
+    """Warm up embedding model to avoid cold-start timeouts in deployment."""
+    try:
+        app.logger.info('Warmup: starting model download/init...')
+        # Prefer the model used by query path
+        try:
+            # Import lazily to avoid overhead if unused
+            from scripts.query_rag import embed_query  # type: ignore
+            _ = embed_query('sentence-transformers/all-mpnet-base-v2', 'warmup')
+            app.logger.info('Warmup: mpnet embed initialized')
+        except Exception as e:
+            app.logger.warning(f'Warmup: mpnet init failed: {e}')
+        # Also try configured model (may be MiniLM)
+        try:
+            from sentence_transformers import SentenceTransformer  # type: ignore
+            SentenceTransformer(getattr(settings, 'embedding_model', 'sentence-transformers/all-mpnet-base-v2'))
+            app.logger.info('Warmup: settings.embedding_model initialized')
+        except Exception as e:
+            app.logger.warning(f'Warmup: settings model init failed: {e}')
+        app.logger.info('Warmup: completed')
+    except Exception as e:
+        app.logger.warning(f'Warmup encountered an error: {e}')
+
+
+# Kick off warmup in background (non-blocking)
+try:
+    Thread(target=_background_warmup, daemon=True).start()
+except Exception:
+    pass
+
+
 @app.errorhandler(404)
 def not_found_error(error):
     return jsonify({'error': 'Endpoint not found'}), 404
@@ -124,6 +156,60 @@ def health_check():
         return jsonify(error_status), 500
     except Exception as e:
         return jsonify({'status': 'unhealthy', 'error': str(e)}), 503
+
+
+@app.route('/api/debug/status')
+def debug_status():
+    """Lightweight diagnostics to verify data files and vector DB access."""
+    try:
+        # Processed data
+        processed_path = PROJECT_ROOT / 'data' / 'processed' / 'zameen_phase7_processed.json'
+        processed_exists = processed_path.exists()
+        processed_count = 0
+        if processed_exists:
+            try:
+                pmap = load_processed_map(processed_path)
+                processed_count = len(pmap)
+            except Exception as e:
+                processed_error = str(e)
+        else:
+            processed_error = 'processed file missing'
+
+        # Vector DB
+        chroma_dir = PROJECT_ROOT / 'chromadb_data'
+        vector_db_exists = chroma_dir.exists()
+        collection_count = None
+        vector_error = None
+        if vector_db_exists:
+            try:
+                import chromadb  # type: ignore
+                client = chromadb.PersistentClient(path=str(chroma_dir))
+                coll = client.get_or_create_collection(name=settings.collection_name)
+                if hasattr(coll, 'count'):
+                    collection_count = coll.count()
+            except Exception as e:
+                vector_error = str(e)
+
+        out = {
+            'status': 'ok',
+            'processed': {
+                'path': str(processed_path),
+                'exists': processed_exists,
+                'count': processed_count,
+                'error': locals().get('processed_error')
+            },
+            'vector_db': {
+                'path': str(chroma_dir),
+                'exists': vector_db_exists,
+                'collection': settings.collection_name,
+                'count': collection_count,
+                'error': vector_error
+            },
+            'timestamp': datetime.now().isoformat()
+        }
+        return jsonify(out), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'error': str(e)}), 500
 
 
 @app.route('/')

@@ -294,6 +294,9 @@
       addMessage('assistant', "...", loadingId);
       
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s safety timeout
+
         const response = await fetch('/api/message', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -301,9 +304,25 @@
             message: text,
             chat_id: currentChatId,
             store_history: true
-          })
+          }),
+          signal: controller.signal
         });
-        
+        clearTimeout(timeoutId);
+
+        // Validate HTTP status first
+        if (!response.ok) {
+          const raw = (await response.text().catch(() => '')) || '';
+          throw new Error(`HTTP ${response.status} ${response.statusText}${raw ? ` — ${raw.slice(0, 200)}` : ''}`);
+        }
+
+        // Ensure JSON content-type
+        const ctype = (response.headers.get('content-type') || '').toLowerCase();
+        if (!ctype.includes('application/json')) {
+          const raw = (await response.text().catch(() => '')) || '';
+          throw new Error(`Non-JSON response${raw ? ` — ${raw.slice(0, 200)}` : ''}`);
+        }
+
+        // Parse JSON
         const data = await response.json();
         
         const loadingElement = document.getElementById(loadingId);
@@ -321,7 +340,7 @@
       } catch (error) {
         const loadingElement = document.getElementById(loadingId);
         if (loadingElement) loadingElement.remove();
-        addMessage('assistant', `❌ Network error: ${error.message}`);
+        addMessage('assistant', `❌ Network error: ${error && error.message ? error.message : 'Request failed'}`);
       }
     }
 
