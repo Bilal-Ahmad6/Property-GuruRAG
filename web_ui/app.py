@@ -381,19 +381,4 @@ def message():
     return jsonify({'chat_id': chat_id, 'assistant_message': assistant_entry, 'messages': history, 'title': history[0]['content'] if history and history[0]['role']=='user' else 'New Conversation'})
 
 
-if __name__ == '__main__':
-    # Get configuration from environment
-    port = int(os.getenv('PORT', 8000))
-    host = os.getenv('HOST', '0.0.0.0')
-    debug = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
-    
-    # Auto-run with API key loaded from .env if available
-    print("🚀 Starting PropertyGuru Web UI...")
-    print(f"📍 Access the application at: http://{host}:{port}")
-    print("⚠️  Press CTRL+C to stop the server")
-    
-    # Log startup info
-    app.logger.info(f'Starting PropertyGuru on {host}:{port} (debug={debug})')
-    
-    app.run(host=host, port=port, debug=debug)
 
