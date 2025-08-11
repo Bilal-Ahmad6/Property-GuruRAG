@@ -3,7 +3,7 @@ services:
     name: propertyguru
     runtime: python3
     buildCommand: pip install -r requirements.txt
-  startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 --keep-alive 60 web_ui.app:app
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 --keep-alive 60 web_ui.app:app
     plan: free
     healthCheckPath: /health
     envVars:
@@ -16,8 +16,6 @@ services:
       - key: ZAMEEN_CHROMA_PERSIST_DIR
         value: /app/data/chromadb_data
       - key: COHERE_API_KEY
-        sync: false
-      - key: GROQ_API_KEY
         sync: false
       - key: SECRET_KEY
         generateValue: true
