@@ -1,0 +1,1323 @@
+{
+  "20250811174113380484": [
+    {
+      "role": "user",
+      "content": "list a few houses available for sale in bahria phase 7",
+      "ts": "2025-08-11T17:41:13.380484"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 5 properties matching your criteria.",
+      "ts": "2025-08-11T17:41:18.838755",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 3700.438200030476,
+          "retrieve_ms": 387.7702999743633,
+          "generate_ms": 1108.4695999743417,
+          "total_ms": 5385.306199954357
+        },
+        "retrieved": [
+          {
+            "listing_id": "7ccdefd980d2b7e86e5d8d058e83b9e78f4ce02f",
+            "title": "A 10 Marla Beautiful House Available In Bahria Town Phase 7",
+            "distance": 0.37856149673461914
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "distance": 0.39434951543807983
+          },
+          {
+            "listing_id": "18d7703813b8e3e5b9b76b425140d9a5b3614d15",
+            "title": "Highly-coveted 10 Marla House Is Available In Bahria Town Phase 7 For sale",
+            "distance": 0.39973995089530945
+          },
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "distance": 0.4000813364982605
+          },
+          {
+            "listing_id": "91b5e89c5699ffdb78a4a0d4081376d170d760db",
+            "title": "For Sale 10 Marla Double Storey Brand New Designer Luxurious House Available in Bahria Town Phase 7 Rawalpindi",
+            "distance": 0.4012293815612793
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "7ccdefd980d2b7e86e5d8d058e83b9e78f4ce02f",
+            "title": "A 10 Marla Beautiful House Available In Bahria Town Phase 7",
+            "price": "PKR 49,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_a_10_marla_beautiful_house_available_in_bahria_town_phase_7-52653975-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2024 Parking Spaces : 2 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2024",
+              "Parking Spaces : 2",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "price": "PKR 119,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_luxurious_one_kanal_house_for_sale_in_bahria_town_phase_7-8-52582454-3047-1.html",
+            "amenities": [
+              "Main Features Double Glazed Windows Central Air Conditioning Central Heating Waste Disposal Furnished",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Waste Disposal",
+              "Furnished",
+              "Rooms Drawing Room Dining Room Study Room Prayer Room Powder Room Gym Steam Room Lounge or Sitting Room Laundry Room",
+              "Drawing Room"
+            ]
+          },
+          {
+            "listing_id": "18d7703813b8e3e5b9b76b425140d9a5b3614d15",
+            "title": "Highly-coveted 10 Marla House Is Available In Bahria Town Phase 7 For sale",
+            "price": "PKR 40,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_highly-coveted_10_marla_house_is_available_in_bahria_town_phase_7_for_sale-52960604-3047-1.html",
+            "amenities": [
+              "Main Features Waste Disposal Other Main Features",
+              "Waste Disposal",
+              "Other Main Features",
+              "Business and Communication Broadband Internet Access Satellite or Cable TV Ready Intercom Other Business and Communication Facilities",
+              "Broadband Internet Access",
+              "Satellite or Cable TV Ready",
+              "Intercom",
+              "Other Business and Communication Facilities"
+            ]
+          },
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "price": "PKR 80,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_kanal_house_on_investor_rate-46962783-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2016 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2016",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "91b5e89c5699ffdb78a4a0d4081376d170d760db",
+            "title": "For Sale 10 Marla Double Storey Brand New Designer Luxurious House Available in Bahria Town Phase 7 Rawalpindi",
+            "price": "PKR 45,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_for_sale_10_marla_double_storey_brand_new_designer_luxurious_house_available_in_bahria_town_phase_7_rawalpindi-52665982-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2025 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2025",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "role": "user",
+      "content": "list properties under 5 crore or 50000000",
+      "ts": "2025-08-11T17:41:41.890379"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 4 properties matching your criteria.",
+      "ts": "2025-08-11T17:41:43.815155",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 71.78569998359308,
+          "retrieve_ms": 4.493899992667139,
+          "generate_ms": 1773.7939999788068,
+          "total_ms": 1871.7500999919139
+        },
+        "retrieved": [
+          {
+            "listing_id": "72ff47999fbce18caaca57f5ac74951a2f442d60",
+            "title": "Bahria Town Phase 7 10 Marla Brand New Designer House",
+            "distance": 0.8862441182136536
+          },
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "distance": 0.887079656124115
+          },
+          {
+            "listing_id": "d8376da254300ecd8a4df6d4bd511846b204cdc9",
+            "title": "Bahria Town Phase 22 Marla Designer House 4 Beds With Attached Baths Outstanding Location On Investor Rate",
+            "distance": 0.896939754486084
+          },
+          {
+            "listing_id": "240e96779481d8fa29fa71fced3e7a07262e5855",
+            "title": "Bahria Town Phase 7, 10 Marla Brand New Designer House",
+            "distance": 0.898651659488678
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "distance": 0.9061951637268066
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "72ff47999fbce18caaca57f5ac74951a2f442d60",
+            "title": "Bahria Town Phase 7 10 Marla Brand New Designer House",
+            "price": "PKR 50,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_10_marla_brand_new_designer_house-52092857-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2025 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2025",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "price": "PKR 80,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_kanal_house_on_investor_rate-46962783-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2016 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2016",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "d8376da254300ecd8a4df6d4bd511846b204cdc9",
+            "title": "Bahria Town Phase 22 Marla Designer House 4 Beds With Attached Baths Outstanding Location On Investor Rate",
+            "price": "PKR 145,000,000",
+            "bedrooms": 5,
+            "bathrooms": 1,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_22_marla_designer_house_4_beds_with_attached_baths_outstanding_location_on_investor_rate-47796965-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2014 Parking Spaces : 5 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors Other Main Features Furnished",
+              "Built in year : 2014",
+              "Parking Spaces : 5",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "240e96779481d8fa29fa71fced3e7a07262e5855",
+            "title": "Bahria Town Phase 7, 10 Marla Brand New Designer House",
+            "price": "PKR 53,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_10_marla_brand_new_designer_house-52084831-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2025 Parking Spaces : 4 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2025",
+              "Parking Spaces : 4",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "price": "PKR 37,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_brand_new_designers_house_house_for_sale_10_marla-52848483-3047-1.html",
+            "amenities": [
+              "Main Features Flooring",
+              "Flooring",
+              "Rooms Bedrooms : 4 Bathrooms : 4 Servant Quarters : 1 Kitchens : 1",
+              "Bedrooms : 4",
+              "Bathrooms : 4",
+              "Servant Quarters : 1",
+              "Kitchens : 1",
+              "Community Features Mosque"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "role": "user",
+      "content": "list a few properties built in 2025",
+      "ts": "2025-08-11T17:42:15.107224"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 1 property matching your criteria.",
+      "ts": "2025-08-11T17:42:16.005471",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 61.283299990464,
+          "retrieve_ms": 4.641600011382252,
+          "generate_ms": 751.8891000072472,
+          "total_ms": 839.2141999793239
+        },
+        "retrieved": [
+          {
+            "listing_id": "9da66e1cd096b950b19ffa007bdaa0c06d7ca066",
+            "title": "Residential Apartment For Sale",
+            "distance": 1.1386373043060303
+          },
+          {
+            "listing_id": "3407b32a018f3c9d6bbefb6d18a970dfcc56ae53",
+            "title": "2 Bedroom Apartment Investor Rate",
+            "distance": 1.144052267074585
+          },
+          {
+            "listing_id": "f45f285b0ffab05c2dc7390c58f9241bf0c3af93",
+            "title": "2 Bed Lavish & Luxury River Loft Apartment For Sale in Bahria Intellectual Village",
+            "distance": 1.1451847553253174
+          },
+          {
+            "listing_id": "3a15d56e14d66548e3908fcaf27295c20a45ec69",
+            "title": "3 Bed Duplex Penthouse With Lawn In River Loft Bahria Intellectual Village",
+            "distance": 1.1501034498214722
+          },
+          {
+            "listing_id": "dfbfaf29b223539be24698fe49f9e83814dee54c",
+            "title": "2 Bed Fully Furnished Corner Apartment Heatproof For sale In Bahria Heights 7.",
+            "distance": 1.151563286781311
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "9da66e1cd096b950b19ffa007bdaa0c06d7ca066",
+            "title": "Residential Apartment For Sale",
+            "price": "PKR 16,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_heights_5_residential_apartment_for_sale-52566436-17565-1.html",
+            "amenities": [
+              "Main Features Built in year : 2023 Parking Spaces : 1 Lobby in Building Double Glazed Windows Flooring Electricity Backup Waste Disposal Floor Floors in Building Elevators Service Elevators in Building Furnished",
+              "Built in year : 2023",
+              "Parking Spaces : 1",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Flooring",
+              "Electricity Backup",
+              "Waste Disposal"
+            ]
+          },
+          {
+            "listing_id": "3407b32a018f3c9d6bbefb6d18a970dfcc56ae53",
+            "title": "2 Bedroom Apartment Investor Rate",
+            "price": "PKR 4,800,000",
+            "bedrooms": "not provided",
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_square_commercial_2_bedroom_apartment_investor_rate-52830646-14537-1.html",
+            "amenities": [
+              "Main Features Built in year : 2025 Parking Spaces : 2 Lobby in Building Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors in Building Elevators Other Main Features Furnished",
+              "Built in year : 2025",
+              "Parking Spaces : 2",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring"
+            ]
+          },
+          {
+            "listing_id": "f45f285b0ffab05c2dc7390c58f9241bf0c3af93",
+            "title": "2 Bed Lavish & Luxury River Loft Apartment For Sale in Bahria Intellectual Village",
+            "price": "PKR 29,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_bed_lavish_luxury_river_loft_apartment_for_sale_in_bahria_intellectual_village-51740053-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2022 Parking Spaces Lobby in Building Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floor Floors in Building Elevators : 2 Service Elevators in Building Other Main Features Furnished",
+              "Built in year : 2022",
+              "Parking Spaces",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring"
+            ]
+          },
+          {
+            "listing_id": "3a15d56e14d66548e3908fcaf27295c20a45ec69",
+            "title": "3 Bed Duplex Penthouse With Lawn In River Loft Bahria Intellectual Village",
+            "price": "PKR 41,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_3_bed_duplex_penthouse_with_lawn_in_river_loft_bahria_intellectual_village-52604874-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2023 Parking Spaces : 2 Lobby in Building Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floor Floors in Building Elevators : 2 Service Elevators in Building Other Main Features Furnished",
+              "Built in year : 2023",
+              "Parking Spaces : 2",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring"
+            ]
+          },
+          {
+            "listing_id": "dfbfaf29b223539be24698fe49f9e83814dee54c",
+            "title": "2 Bed Fully Furnished Corner Apartment Heatproof For sale In Bahria Heights 7.",
+            "price": "PKR 24,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_bed_fully_furnished_corner_apartment_heatproof_for_sale_in_bahria_heights_7-52722382-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2023 Parking Spaces Lobby in Building Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floor Floors in Building : 4 Elevators : 3 Service Elevators in Building Other Main Features Furnished",
+              "Built in year : 2023",
+              "Parking Spaces",
+              "Lobby in Building",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "20250811181156659894": [
+    {
+      "role": "user",
+      "content": "president of usa",
+      "ts": "2025-08-11T18:11:56.659894"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry, I encountered an error searching the database: 'dict' object has no attribute 'dimensionality'",
+      "ts": "2025-08-11T18:12:05.795499",
+      "meta": {
+        "mode": "retrieval_error"
+      }
+    }
+  ],
+  "20250811182023959043": [
+    {
+      "role": "user",
+      "content": "Find 3 bedroom houses in River Hill",
+      "ts": "2025-08-11T18:20:23.959043"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry, I encountered an error searching the database: Error executing plan: Error sending backfill request to compactor: Error reading from metadata segment reader: error occurred while decoding column 0: mismatched types; Rust type `u64` (as SQL type `INTEGER`) is not compatible with SQL type `BLOB` ",
+      "ts": "2025-08-11T18:20:28.846007",
+      "meta": {
+        "mode": "retrieval_error"
+      }
+    },
+    {
+      "role": "user",
+      "content": "give house listed for sale in bahria phase 7",
+      "ts": "2025-08-11T18:20:57.248262"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry, I encountered an error searching the database: Error executing plan: Error sending backfill request to compactor: Error reading from metadata segment reader: error occurred while decoding column 0: mismatched types; Rust type `u64` (as SQL type `INTEGER`) is not compatible with SQL type `BLOB` ",
+      "ts": "2025-08-11T18:20:57.369910",
+      "meta": {
+        "mode": "retrieval_error"
+      }
+    }
+  ],
+  "20250811182257038200": [
+    {
+      "role": "user",
+      "content": "give house listed for sale in bahria phase 7",
+      "ts": "2025-08-11T18:22:57.038200"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 5 properties matching your criteria.",
+      "ts": "2025-08-11T18:23:03.918542",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 4828.692500013858,
+          "retrieve_ms": 305.5201999959536,
+          "generate_ms": 1372.7997999521904,
+          "total_ms": 6828.206999984104
+        },
+        "retrieved": [
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "distance": 0.35384824872016907
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "distance": 0.356301486492157
+          },
+          {
+            "listing_id": "ba10cbf9484b44d10cdadddebe3984b8ac3559f9",
+            "title": "Centrally Located On Excellent Location House Available In Bahria Town Phase 7 For Sale",
+            "distance": 0.3563699424266815
+          },
+          {
+            "listing_id": "f8f125fb2573515bbebd7515797848ad0b00d172",
+            "title": "Main Double Road House For sale In Rs. 53000000",
+            "distance": 0.36590948700904846
+          },
+          {
+            "listing_id": "18d7703813b8e3e5b9b76b425140d9a5b3614d15",
+            "title": "Highly-coveted 10 Marla House Is Available In Bahria Town Phase 7 For sale",
+            "distance": 0.3695792555809021
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "price": "PKR 37,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_brand_new_designers_house_house_for_sale_10_marla-52848483-3047-1.html",
+            "amenities": [
+              "Main Features Flooring",
+              "Flooring",
+              "Rooms Bedrooms : 4 Bathrooms : 4 Servant Quarters : 1 Kitchens : 1",
+              "Bedrooms : 4",
+              "Bathrooms : 4",
+              "Servant Quarters : 1",
+              "Kitchens : 1",
+              "Community Features Mosque"
+            ]
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "price": "PKR 150,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_kanal_house_for_sale_in_garden_city_zone_1_bahria_phase_7-50044970-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2022 Parking Spaces Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2022",
+              "Parking Spaces",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "ba10cbf9484b44d10cdadddebe3984b8ac3559f9",
+            "title": "Centrally Located On Excellent Location House Available In Bahria Town Phase 7 For Sale",
+            "price": "PKR 100,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_centrally_located_on_excellent_location_house_available_in_bahria_town_phase_7_for_sale-52958857-3047-1.html",
+            "amenities": [
+              "Main Features Double Glazed Windows Central Air Conditioning Other Main Features",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Other Main Features",
+              "Rooms Bedrooms : 5 Bathrooms : 6 Servant Quarters : 1 Drawing Room Dining Room Kitchens : 2 Powder Room Lounge or Sitting Room Laundry Room Other Rooms",
+              "Bedrooms : 5",
+              "Bathrooms : 6",
+              "Servant Quarters : 1"
+            ]
+          },
+          {
+            "listing_id": "f8f125fb2573515bbebd7515797848ad0b00d172",
+            "title": "Main Double Road House For sale In Rs. 53000000",
+            "price": "PKR 53,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_main_double_road_house_for_sale_in_rs_53000000-52558209-3047-1.html",
+            "amenities": []
+          },
+          {
+            "listing_id": "18d7703813b8e3e5b9b76b425140d9a5b3614d15",
+            "title": "Highly-coveted 10 Marla House Is Available In Bahria Town Phase 7 For sale",
+            "price": "PKR 40,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_highly-coveted_10_marla_house_is_available_in_bahria_town_phase_7_for_sale-52960604-3047-1.html",
+            "amenities": [
+              "Main Features Waste Disposal Other Main Features",
+              "Waste Disposal",
+              "Other Main Features",
+              "Business and Communication Broadband Internet Access Satellite or Cable TV Ready Intercom Other Business and Communication Facilities",
+              "Broadband Internet Access",
+              "Satellite or Cable TV Ready",
+              "Intercom",
+              "Other Business and Communication Facilities"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "20250811183436523283": [
+    {
+      "role": "user",
+      "content": "list houses for sale",
+      "ts": "2025-08-11T18:34:36.523283"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry, I encountered an error searching the database: Database is not healthy and could not be recovered",
+      "ts": "2025-08-11T18:36:11.620439",
+      "meta": {
+        "mode": "retrieval_error"
+      }
+    }
+  ],
+  "20250811183903502687": [
+    {
+      "role": "user",
+      "content": "hi! list me a hew properties available for sale in bahria phase 7",
+      "ts": "2025-08-11T18:39:03.502687"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm your real estate assistant for Bahria Town Phase 7. I can help you find properties based on your preferences.\n\nTry asking me something like:\n- Show me 10 marla houses under 50000000\n- Find apartments with 2 bedrooms\n- What's available near parks?",
+      "ts": "2025-08-11T18:39:03.547136",
+      "meta": {
+        "mode": "greeting"
+      }
+    },
+    {
+      "role": "user",
+      "content": "list me a hew properties available for sale in bahria phase 7",
+      "ts": "2025-08-11T18:39:10.449545"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 5 properties matching your criteria.",
+      "ts": "2025-08-11T18:39:16.226558",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 3649.286400002893,
+          "retrieve_ms": 590.7563000218943,
+          "generate_ms": 1288.0689000012353,
+          "total_ms": 5709.857800044119
+        },
+        "retrieved": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "distance": 0.4092329740524292
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "distance": 0.4130924940109253
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "distance": 0.41804787516593933
+          },
+          {
+            "listing_id": "7ccdefd980d2b7e86e5d8d058e83b9e78f4ce02f",
+            "title": "A 10 Marla Beautiful House Available In Bahria Town Phase 7",
+            "distance": 0.4363195598125458
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "distance": 0.43696749210357666
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "price": "PKR 80,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_kanal_house_on_investor_rate-46962783-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2016 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2016",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "price": "PKR 150,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_kanal_house_for_sale_in_garden_city_zone_1_bahria_phase_7-50044970-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2022 Parking Spaces Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2022",
+              "Parking Spaces",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "price": "PKR 119,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_luxurious_one_kanal_house_for_sale_in_bahria_town_phase_7-8-52582454-3047-1.html",
+            "amenities": [
+              "Main Features Double Glazed Windows Central Air Conditioning Central Heating Waste Disposal Furnished",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Waste Disposal",
+              "Furnished",
+              "Rooms Drawing Room Dining Room Study Room Prayer Room Powder Room Gym Steam Room Lounge or Sitting Room Laundry Room",
+              "Drawing Room"
+            ]
+          },
+          {
+            "listing_id": "7ccdefd980d2b7e86e5d8d058e83b9e78f4ce02f",
+            "title": "A 10 Marla Beautiful House Available In Bahria Town Phase 7",
+            "price": "PKR 49,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_a_10_marla_beautiful_house_available_in_bahria_town_phase_7-52653975-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2024 Parking Spaces : 2 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2024",
+              "Parking Spaces : 2",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "price": "PKR 37,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_brand_new_designers_house_house_for_sale_10_marla-52848483-3047-1.html",
+            "amenities": [
+              "Main Features Flooring",
+              "Flooring",
+              "Rooms Bedrooms : 4 Bathrooms : 4 Servant Quarters : 1 Kitchens : 1",
+              "Bedrooms : 4",
+              "Bathrooms : 4",
+              "Servant Quarters : 1",
+              "Kitchens : 1",
+              "Community Features Mosque"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "20250811184038782313": [
+    {
+      "role": "user",
+      "content": "list properties for sale",
+      "ts": "2025-08-11T18:40:38.782313"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry, I encountered an error searching the database: 'dict' object has no attribute 'dimensionality'",
+      "ts": "2025-08-11T18:40:46.729706",
+      "meta": {
+        "mode": "retrieval_error"
+      }
+    }
+  ],
+  "20250811185628702525": [
+    {
+      "role": "user",
+      "content": "list properties for sale in phase 7",
+      "ts": "2025-08-11T18:56:28.702525"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 5 properties matching your criteria.",
+      "ts": "2025-08-11T18:56:37.109898",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 6766.936899977736,
+          "retrieve_ms": 211.81319997413084,
+          "generate_ms": 1181.606099999044,
+          "total_ms": 8354.213399987202
+        },
+        "retrieved": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "distance": 0.4885384440422058
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "distance": 0.501488208770752
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "distance": 0.5195083022117615
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "distance": 0.5218115448951721
+          },
+          {
+            "listing_id": "780d2645d004ac91b7fae508fb070ce464555d5a",
+            "title": "10 Marla Brand New Hight Location Double Unit House For Sale Phase 7 Bahria Town",
+            "distance": 0.5251815319061279
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "price": "PKR 80,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_kanal_house_on_investor_rate-46962783-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2016 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2016",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "price": "PKR 37,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_brand_new_designers_house_house_for_sale_10_marla-52848483-3047-1.html",
+            "amenities": [
+              "Main Features Flooring",
+              "Flooring",
+              "Rooms Bedrooms : 4 Bathrooms : 4 Servant Quarters : 1 Kitchens : 1",
+              "Bedrooms : 4",
+              "Bathrooms : 4",
+              "Servant Quarters : 1",
+              "Kitchens : 1",
+              "Community Features Mosque"
+            ]
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "price": "PKR 150,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_kanal_house_for_sale_in_garden_city_zone_1_bahria_phase_7-50044970-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2022 Parking Spaces Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2022",
+              "Parking Spaces",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "price": "PKR 119,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_luxurious_one_kanal_house_for_sale_in_bahria_town_phase_7-8-52582454-3047-1.html",
+            "amenities": [
+              "Main Features Double Glazed Windows Central Air Conditioning Central Heating Waste Disposal Furnished",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Waste Disposal",
+              "Furnished",
+              "Rooms Drawing Room Dining Room Study Room Prayer Room Powder Room Gym Steam Room Lounge or Sitting Room Laundry Room",
+              "Drawing Room"
+            ]
+          },
+          {
+            "listing_id": "780d2645d004ac91b7fae508fb070ce464555d5a",
+            "title": "10 Marla Brand New Hight Location Double Unit House For Sale Phase 7 Bahria Town",
+            "price": "PKR 45,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_10_marla_brand_new_hight_location_double_unit_house_for_sale_phase_7_bahria_town-52955132-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2024 Parking Spaces : 2 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2024",
+              "Parking Spaces : 2",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "20250811185755567248": [
+    {
+      "role": "user",
+      "content": "list properties for sale in phase 7",
+      "ts": "2025-08-11T18:57:55.567248"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 5 properties matching your criteria.",
+      "ts": "2025-08-11T18:58:03.196193",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 6379.370900045615,
+          "retrieve_ms": 199.75119997980073,
+          "generate_ms": 829.19929997297,
+          "total_ms": 7572.956199990585
+        },
+        "retrieved": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "distance": 0.4885384440422058
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "distance": 0.501488208770752
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "distance": 0.5195083022117615
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "distance": 0.5218115448951721
+          },
+          {
+            "listing_id": "780d2645d004ac91b7fae508fb070ce464555d5a",
+            "title": "10 Marla Brand New Hight Location Double Unit House For Sale Phase 7 Bahria Town",
+            "distance": 0.5251815319061279
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "price": "PKR 80,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_kanal_house_on_investor_rate-46962783-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2016 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2016",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "price": "PKR 37,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_brand_new_designers_house_house_for_sale_10_marla-52848483-3047-1.html",
+            "amenities": [
+              "Main Features Flooring",
+              "Flooring",
+              "Rooms Bedrooms : 4 Bathrooms : 4 Servant Quarters : 1 Kitchens : 1",
+              "Bedrooms : 4",
+              "Bathrooms : 4",
+              "Servant Quarters : 1",
+              "Kitchens : 1",
+              "Community Features Mosque"
+            ]
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "price": "PKR 150,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_kanal_house_for_sale_in_garden_city_zone_1_bahria_phase_7-50044970-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2022 Parking Spaces Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2022",
+              "Parking Spaces",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "price": "PKR 119,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_luxurious_one_kanal_house_for_sale_in_bahria_town_phase_7-8-52582454-3047-1.html",
+            "amenities": [
+              "Main Features Double Glazed Windows Central Air Conditioning Central Heating Waste Disposal Furnished",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Waste Disposal",
+              "Furnished",
+              "Rooms Drawing Room Dining Room Study Room Prayer Room Powder Room Gym Steam Room Lounge or Sitting Room Laundry Room",
+              "Drawing Room"
+            ]
+          },
+          {
+            "listing_id": "780d2645d004ac91b7fae508fb070ce464555d5a",
+            "title": "10 Marla Brand New Hight Location Double Unit House For Sale Phase 7 Bahria Town",
+            "price": "PKR 45,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_10_marla_brand_new_hight_location_double_unit_house_for_sale_phase_7_bahria_town-52955132-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2024 Parking Spaces : 2 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2024",
+              "Parking Spaces : 2",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "20250811185930639048": [
+    {
+      "role": "user",
+      "content": "list properties for sale in phase 7",
+      "ts": "2025-08-11T18:59:30.639048"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 5 properties matching your criteria.",
+      "ts": "2025-08-11T18:59:36.287391",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 4056.6098000272177,
+          "retrieve_ms": 225.46799998963252,
+          "generate_ms": 1151.0688999551348,
+          "total_ms": 5602.151400002185
+        },
+        "retrieved": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "distance": 0.48853838443756104
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "distance": 0.5014880895614624
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "distance": 0.5195083618164062
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "distance": 0.5218116641044617
+          },
+          {
+            "listing_id": "780d2645d004ac91b7fae508fb070ce464555d5a",
+            "title": "10 Marla Brand New Hight Location Double Unit House For Sale Phase 7 Bahria Town",
+            "distance": 0.5251815319061279
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "c898a03133c192e031d6577b20cbd1e2d265d816",
+            "title": "Bahria Town Phase 7, Kanal House On Investor Rate",
+            "price": "PKR 80,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_kanal_house_on_investor_rate-46962783-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2016 Parking Spaces : 3 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2016",
+              "Parking Spaces : 3",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "dd7295fff05da49e375fbe436aaebc2604f0ead0",
+            "title": "Bahria Town Phase 7 Brand New Designers House House For Sale 10 Marla",
+            "price": "PKR 37,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_bahria_town_phase_7_brand_new_designers_house_house_for_sale_10_marla-52848483-3047-1.html",
+            "amenities": [
+              "Main Features Flooring",
+              "Flooring",
+              "Rooms Bedrooms : 4 Bathrooms : 4 Servant Quarters : 1 Kitchens : 1",
+              "Bedrooms : 4",
+              "Bathrooms : 4",
+              "Servant Quarters : 1",
+              "Kitchens : 1",
+              "Community Features Mosque"
+            ]
+          },
+          {
+            "listing_id": "ca85acc96667da1b76d634c3b79a9422c19861d5",
+            "title": "2 Kanal House For Sale In  Garden City  Zone 1. Bahria Phase 7",
+            "price": "PKR 150,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_2_kanal_house_for_sale_in_garden_city_zone_1_bahria_phase_7-50044970-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2022 Parking Spaces Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2022",
+              "Parking Spaces",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "2ad0eff67d25535cfce6d45339125195f3e06945",
+            "title": "Luxurious One Kanal House For Sale In BAHRIA TOWN PHASE 7-8",
+            "price": "PKR 119,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "kanal",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_luxurious_one_kanal_house_for_sale_in_bahria_town_phase_7-8-52582454-3047-1.html",
+            "amenities": [
+              "Main Features Double Glazed Windows Central Air Conditioning Central Heating Waste Disposal Furnished",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Waste Disposal",
+              "Furnished",
+              "Rooms Drawing Room Dining Room Study Room Prayer Room Powder Room Gym Steam Room Lounge or Sitting Room Laundry Room",
+              "Drawing Room"
+            ]
+          },
+          {
+            "listing_id": "780d2645d004ac91b7fae508fb070ce464555d5a",
+            "title": "10 Marla Brand New Hight Location Double Unit House For Sale Phase 7 Bahria Town",
+            "price": "PKR 45,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_rawalpindi_bahria_town_phase_7_10_marla_brand_new_hight_location_double_unit_house_for_sale_phase_7_bahria_town-52955132-3047-1.html",
+            "amenities": [
+              "Main Features Built in year : 2024 Parking Spaces : 2 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floors : 2 Other Main Features Furnished",
+              "Built in year : 2024",
+              "Parking Spaces : 2",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

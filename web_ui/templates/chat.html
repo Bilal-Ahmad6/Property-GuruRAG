@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PropertyGuru Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --transition-fast: 200ms ease-in-out;
+      --radius-md: 12px;
+      --font-body: 'Inter', system-ui, sans-serif;
+  --side-gap: 48px; /* uniform horizontal distance (s) from viewport/chat edges */
+    }
+
+    html[data-theme='dark'] {
+      --bg: #202020;
+      --bg-alt: #2A2A2A;
+      --text: #FFFFFF;
+      --bubble-user: #2B2C36;
+      --bubble-assistant: transparent;
+    }
+
+    html[data-theme='light'] {
+      --bg: #ECECEC;
+      --bg-alt: #FFFFFF;
+      --text: #000000;
+      --bubble-user: #DCE0E6;
+      --bubble-assistant: transparent;
+    }
+
+    body {
+      margin:0;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      display:flex;
+      flex-direction:column;
+      height:100vh;
+      overflow:visible;
+    }
+
+    .layout { display:flex; flex-direction:column; height:100%; }
+
+    /* Static header */
+    .top-header {
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 20px;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .brand { font-size:18px; font-weight:600; }
+
+    .main { 
+      flex:1; 
+      display:flex; 
+      flex-direction:column; 
+      position:relative; 
+      margin-top: 58px;
+    }
+    .chat-scroll {
+      flex:1;
+      overflow-y:auto;
+      overflow-x:hidden;
+      padding:20px;
+      scroll-behavior:smooth;
+      height:calc(100vh - 58px - 100px);
+    }
+    .chat-inner {
+      max-width:900px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+  padding-bottom:120px;
+    }
+    .message-row {
+      display:flex;
+      width:100%;
+  padding:0; /* spacing now handled by bubble margins */
+    }
+    .message-row.user { justify-content:flex-end; }
+    .message-row.assistant { justify-content:flex-start; }
+
+    .bubble {
+      padding:10px 16px;
+      border-radius:16px;
+      font-size:15px;
+      line-height:1.5;
+  /* bubble width limited so both sides appear balanced */
+  max-width: min(680px, calc(100% - (var(--side-gap) * 2)));
+      white-space:pre-wrap;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
+    .user .bubble {
+      background: var(--bubble-user);
+      color: var(--text);
+      text-align: left;
+      border: none;
+      box-shadow: none;
+  margin-left:auto;
+  margin-right: var(--side-gap);
+    }
+    /* Assistant bubble aligned to left & blending with background */
+    .assistant .bubble {
+      background: var(--bubble-assistant);
+      color: var(--text);
+      text-align: left;
+      border: none;
+      box-shadow: none;
+  margin-left: var(--side-gap);
+  margin-right:auto;
+    }
+
+    /* More spacing between listings */
+    .assistant .bubble div[style*="Property Listings"] > div {
+      margin-bottom: 40px !important;
+    }
+
+    .floating-input-wrapper {
+      position:fixed;
+      bottom:20px;
+      left:0;
+      right:0;
+      display:flex;
+      justify-content:center;
+      pointer-events:none;
+    }
+    .floating-input {
+      background: var(--bg-alt);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius:24px;
+      padding:8px 12px;
+      display:flex;
+      gap:8px;
+      width:90%;
+      max-width:800px;
+      pointer-events:auto;
+      align-items:center;
+    }
+    textarea {
+      flex:1;
+      background:transparent;
+      border:none;
+      resize:none;
+      font-size:15px;
+      color: var(--text);
+      outline:none;
+    }
+
+    .send-btn {
+      background:white;
+      border:none;
+      border-radius:50%;
+      width:36px;
+      height:36px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      padding:0;
+      transition: background var(--transition-fast);
+    }
+    .send-btn:hover { background:#e5e5e5; }
+    .send-btn svg {
+      width:16px;
+      height:16px;
+      stroke:black;
+      stroke-width:2;
+      fill:none;
+    }
+
+    /* Moon toggle button styling */
+    #themeToggle {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text);
+      transition: transform 0.2s;
+    }
+    #themeToggle:hover {
+      transform: rotate(20deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="top-header">
+      <div class="brand">PropertyGuru</div>
+      <button id="themeToggle">🌙</button>
+    </div>
+    <main class="main">
+      <div class="chat-scroll" id="chatScroll">
+        <div class="chat-inner" id="chatInner"></div>
+      </div>
+      <div class="floating-input-wrapper">
+        <div class="floating-input">
+          <textarea id="messageInput" placeholder="Send a message" rows="1"></textarea>
+          <button id="sendBtn" class="send-btn">
+            <svg viewBox="0 0 24 24">
+              <line x1="12" y1="19" x2="12" y2="5"/>
+              <polyline points="5 12 12 5 19 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const chatInner = document.getElementById('chatInner');
+    const messageInput = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const themeToggleBtn = document.getElementById('themeToggle');
+    
+    let currentChatId = null;
+
+    function addMessage(role, text, id = null) {
+      const row = document.createElement('div');
+      row.className = 'message-row ' + role;
+      if (id) row.id = id;
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      if (text.includes('<') && text.includes('>')) {
+        bubble.innerHTML = text;
+      } else {
+        bubble.textContent = text;
+      }
+      row.appendChild(bubble);
+      chatInner.appendChild(row);
+      chatInner.scrollTop = chatInner.scrollHeight;
+    }
+
+    function displayPropertyListings(listings) {
+      if (!listings || listings.length === 0) return;
+      
+      const row = document.createElement('div');
+      row.className = 'message-row assistant';
+      
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      
+      let listingsHtml = '<div style="margin-top: 10px;"><strong>Property Listings:</strong><br><br>';
+      
+      listings.forEach((listing, index) => {
+        listingsHtml += `<div style="margin-bottom: 40px; padding: 12px; border-left: 3px solid var(--text); background: var(--bg-alt); border-radius: 8px;">`;
+        listingsHtml += `<strong>${index + 1}. ${listing.title || 'Property'}</strong><br><br>`;
+        if (listing.price) listingsHtml += `<div><strong>💰 Price:</strong> ${listing.price}</div>`;
+        if (listing.location) listingsHtml += `<div><strong>📍 Location:</strong> ${listing.location}</div>`;
+        if (listing.amenities && listing.amenities.length > 0) {
+          listingsHtml += `<div style="margin: 8px 0; padding: 8px; background: rgba(255,255,255,0.05); border-radius: 6px;">`;
+          listingsHtml += `<strong>🏠 Amenities:</strong><br>`;
+          listing.amenities.forEach(amenity => {
+            if (amenity && amenity.trim().length > 0) {
+              listingsHtml += `<div>• ${amenity}</div>`;
+            }
+          });
+          listingsHtml += `</div>`;
+        }
+        if (listing.url) {
+          listingsHtml += `<div style="margin-top: 10px;"><a href="${listing.url}" target="_blank" style="color: var(--link); text-decoration: none; font-weight: 500;">🔗 View Full Details</a></div>`;
+        }
+        listingsHtml += '</div>';
+      });
+      
+      listingsHtml += '</div>';
+      bubble.innerHTML = listingsHtml;
+      row.appendChild(bubble);
+      chatInner.appendChild(row);
+      chatInner.scrollTop = chatInner.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const text = messageInput.value.trim();
+      if (!text) return;
+      
+      addMessage('user', text);
+      messageInput.value = '';
+      
+      const loadingId = 'loading-' + Date.now();
+      addMessage('assistant', "...", loadingId);
+      
+      try {
+        const response = await fetch('/api/message', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: text,
+            chat_id: currentChatId,
+            store_history: true
+          })
+        });
+        
+        const data = await response.json();
+        
+        const loadingElement = document.getElementById(loadingId);
+        if (loadingElement) loadingElement.remove();
+        
+        if (data.error) {
+          addMessage('assistant', `❌ Error: ${data.error}`);
+        } else {
+          currentChatId = data.chat_id;
+          addMessage('assistant', data.assistant_message.content);
+          if (data.assistant_message.meta && data.assistant_message.meta.listings) {
+            displayPropertyListings(data.assistant_message.meta.listings);
+          }
+        }
+      } catch (error) {
+        const loadingElement = document.getElementById(loadingId);
+        if (loadingElement) loadingElement.remove();
+        addMessage('assistant', `❌ Network error: ${error.message}`);
+      }
+    }
+
+    sendBtn.onclick = sendMessage;
+
+    messageInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Theme toggle with icon
+    function updateThemeIcon() {
+      themeToggleBtn.textContent =
+        document.documentElement.getAttribute('data-theme') === 'dark' ? '🌙' : '☀️';
+    }
+    themeToggleBtn.onclick = () => {
+      document.documentElement.setAttribute(
+        'data-theme',
+        document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+      );
+      updateThemeIcon();
+    };
+    updateThemeIcon();
+
+    // Welcome message
+    window.addEventListener('load', () => {
+      const welcomeMessage = `🚀 Welcome to PropertyGuru Chat Assistant!
+      
+I can help you find properties, answer questions about real estate listings, and provide detailed property information. Try asking me:
+• "Show me houses under 50 lakh"
+• "Find 3 bedroom houses in River Hill"
+• "What's the average price of houses?"
+
+How can I assist you today?`;
+      addMessage('assistant', welcomeMessage);
+    });
+  </script>
+</body>
+</html>

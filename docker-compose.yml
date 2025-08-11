@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  propertyguru:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=false
+    env_file:
+      - .env
+    volumes:
+      # Persist data and conversations
+      - ./data:/app/data
+      - ./chromadb_data:/app/chromadb_data
+      - ./logs:/app/logs
+      - ./web_ui/conversations.json:/app/web_ui/conversations.json
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  default:
+    name: propertyguru_network
