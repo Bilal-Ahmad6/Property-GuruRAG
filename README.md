@@ -1,435 +1,243 @@
-# 🏠 PropertyGuru - AI-Powered Real Estate Intelligence Platform
+# PropertyGuru RAG — Bahria Town Phase 7 Real‑Estate Assistant
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-3.0.0-000000.svg)](https://flask.palletsprojects.com)
-[![ChromaDB](https://img.shields.io/badge/ChromaDB-0.5.3-FF6B6B.svg)](https://www.trychroma.com)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Deployment](https://img.shields.io/badge/Deployment-Ready-brightgreen.svg)](https://render.com)
+A practical, end‑to‑end Retrieval‑Augmented Generation (RAG) stack for real‑estate listings in Bahria Town Phase 7 (Rawalpindi).
 
-> A sophisticated real estate RAG (Retrieval-Augmented Generation) system that enables intelligent property search through conversational interfaces. Built specifically for Bahria Town Phase 7 properties with semantic search capabilities and modern web interface.
+It scrapes listings, cleans and enriches data, creates embeddings with Sentence-Transformers, stores vectors in ChromaDB, and serves a conversational web UI powered by Cohere (or other LLMs) to help users find relevant properties quickly.
 
-## 🌟 Features
 
-### 🤖 **AI-Powered Conversational Search**
-- **Natural Language Queries**: "Show me 3-bedroom houses under 50 million" 
-- **Semantic Understanding**: Advanced embedding-based property matching using sentence transformers
-- **RAG Architecture**: Retrieval-augmented generation for accurate, contextual responses
-- **Real-time Chat**: ChatGPT-inspired interface with typing indicators
+## Highlights
 
-### 🏠 **Comprehensive Property Database**
-- **800+ Property Embeddings**: Complete Bahria Town Phase 7 listings
-- **Rich Property Data**: Prices, bedrooms, bathrooms, amenities, locations
-- **Vector Search**: High-performance ChromaDB integration for semantic similarity
-- **Real-time Responses**: Sub-second query processing
+- Data pipeline: scrape → clean/enrich → chunk → embed → query
+- Vector DB: ChromaDB (persistent on disk)
+- Embeddings: Sentence-Transformers (configurable model)
+- LLMs: Cohere by default; Groq/others available in CLI
+- Web UI: Flask app with chat interface and health endpoint
+- API: Minimal FastAPI app for programmatic queries (optional)
+- Windows-friendly (PowerShell) with start scripts and Docker support
 
-### 💻 **Modern Web Interface**
-- **Responsive Design**: Mobile-first design that works on all devices
-- **Dark/Light Themes**: Beautiful UI with theme switching
-- **Conversation History**: Persistent chat sessions
-- **Real-time Updates**: Live typing indicators and instant responses
 
-### 🚀 **Production-Ready Deployment**
-- **Multi-Platform Support**: Render, Heroku, Docker, Vercel ready
-- **Environment Configuration**: Secure API key management
-- **Health Monitoring**: Built-in status checks and logging
-- **Scalable Architecture**: Ready for high-traffic deployment
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.8 or higher
-- pip package manager
-- 2GB+ RAM (recommended for optimal performance)
-- Cohere API key (free tier available)
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/Bilal-Ahmad6/PropertyGuru-RAG-Bot.git
-cd PropertyGuru-RAG-Bot
-```
-
-2. **Create virtual environment**
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Set up environment variables**
-```bash
-# Copy the example environment file
-cp .env.example .env
-
-# Edit .env with your API key
-COHERE_API_KEY=your_cohere_api_key_here
-```
-
-5. **Run the application**
-```bash
-# Start the web interface
-python web_ui/app.py
-```
-
-Visit `http://localhost:8000` to access the conversational property search interface.
-
-### ⚡ Quick Test
-
-Once running, try these example queries in the chat interface:
-- "Show me 3-bedroom houses under 50 million"
-- "Find apartments with parking spaces"
-- "What properties are available in Phase 7?"
-
-## 📊 Project Structure
+## Project Structure
 
 ```
 PropertyGuru/
-├── 📁 web_ui/               # Flask web interface (main app)
-│   ├── app.py               # Main web application
-│   ├── templates/           # Jinja2 templates
-│   ├── static/              # CSS, JS, images
-│   └── conversations.json   # Chat history storage
-├── 📁 scripts/              # Data processing pipeline
-│   ├── scrape_listings.py   # Web scraping automation
-│   ├── clean_and_enrich.py  # Data preprocessing
-│   ├── embed_and_store.py   # Vector embedding generation
-│   ├── query_rag.py         # RAG query processing
-│   └── utils.py             # Utility functions
-├── 📁 data/                 # Data storage
-│   ├── raw/                 # Raw scraped data
-│   └── processed/           # Cleaned and enriched data
-├── 📁 chromadb_data/        # Vector database storage (800+ embeddings)
-├── 📁 processor/            # Data processing utilities
-├── 📁 tests/                # Unit and integration tests
-├── 📁 logs/                 # Application logs
-├── config.py                # Configuration management
-├── requirements.txt         # Python dependencies
-├── render.yaml              # Render.com deployment config
-├── Dockerfile               # Docker containerization
-├── docker-compose.yml       # Multi-container setup
-└── .env.example             # Environment variables template
-│   ├── scrape_listings.py   # Web scraping automation
-│   ├── clean_and_enrich.py  # Data preprocessing
-│   ├── embed_and_store.py   # Vector embedding generation
-│   └── query_rag.py         # Query processing utilities
-├── 📁 data/                 # Data storage
-│   ├── raw/                 # Raw scraped data
-│   └── processed/           # Cleaned and enriched data
-├── 📁 chromadb_data/        # Vector database storage
-├── 📁 processor/            # Data processing utilities
-├── 📁 tests/                # Unit and integration tests
-├── 📁 logs/                 # Application logs
-├── config.py                # Configuration management
-└── requirements.txt         # Python dependencies
+├─ web_ui/
+│  ├─ app.py                # Flask web app (UI + JSON APIs)
+│  └─ templates/chat.html   # Chat UI
+├─ rag_app/
+│  └─ app.py                # Optional FastAPI service (/query)
+├─ scripts/
+│  ├─ scrape_listings.py    # Scrapes Zameen listing + detail pages
+│  ├─ clean_and_enrich.py   # Cleans, canonicalizes, chunks text
+│  ├─ embed_and_store.py    # Embeds chunks and stores in ChromaDB
+│  ├─ query_rag.py          # RAG querying + CLI helpers
+│  └─ utils.py              # IO/HTTP helpers
+├─ data/
+│  ├─ raw/                  # Scraped JSON + progress/template
+│  └─ processed/            # Processed listings + chunks.jsonl
+├─ chromadb_data/           # ChromaDB persistence (auto-created)
+├─ tests/                   # Basic sanity tests
+├─ config.py                # Central settings via pydantic-settings
+├─ requirements.txt         # Dependencies (pinned/compatible)
+├─ Dockerfile               # Container image for web UI
+├─ docker-compose.yml       # Local container run (optional)
+├─ start.bat / start.sh     # Convenience scripts to run UI
+└─ README.md                # This file
 ```
 
-## 🏛️ Architecture Overview
 
-PropertyGuru implements a modern RAG (Retrieval-Augmented Generation) architecture optimized for real estate search:
+## Prerequisites
 
-### Data Flow Pipeline
+- Python 3.10+ (3.11 recommended)
+- Windows PowerShell (project scripts are Windows-friendly)
+- Optional: CUDA‑enabled PyTorch for GPU embeddings
 
-```mermaid
-graph TD
-    A[Zameen.com Data] --> B[Web Scraping]
-    B --> C[Data Cleaning & Enrichment]
-    C --> D[Sentence Transformer Embeddings]
-    D --> E[ChromaDB Vector Storage]
-    E --> F[RAG Query Engine]
-    F --> G[Cohere LLM]
-    G --> H[Web Chat Interface]
-    
-    I[User Query] --> F
-    F --> I
+
+## Quick Start
+
+1) Clone and create a virtual environment
+
+```powershell
+# From PowerShell in the project root
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -U pip
+pip install -r requirements.txt
 ```
 
-### Core Components
+2) Configure environment
 
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Web Interface** | Flask + Jinja2 | Conversational property search UI |
-| **Vector Database** | ChromaDB | Semantic search with 800+ property embeddings |
-| **RAG Engine** | LangChain + Cohere | Intelligent query processing and response generation |
-| **Embeddings** | Sentence Transformers | Property description semantic understanding |
-| **Data Pipeline** | Python + BeautifulSoup | Property data extraction and processing |
-
-### Current Database Stats
-- **Properties**: 160+ listings from Bahria Town Phase 7
-- **Embeddings**: 800+ document chunks for semantic search
-- **Response Time**: Sub-second query processing
-- **Storage**: Optimized vector indexing with ChromaDB
-
-## 📖 Usage Examples
-
-### Web Interface (Recommended)
-
-Simply visit `http://localhost:8000` and start chatting:
+Create a .env file in the project root (values shown are examples):
 
 ```
-👤 "Show me 3-bedroom houses under 50 million"
-🤖 "I found 5 houses matching your criteria..."
+# App + data
+ZAMEEN_START_URL=https://www.zameen.com/Homes/Rawalpindi_Bahria_Town_Rawalpindi_Bahria_Town_Phase_7-3047-1.html
+ZAMEEN_COLLECTION_NAME=zameen_listings
+ZAMEEN_EMBEDDING_MODEL=sentence-transformers/all-mpnet-base-v2
 
-👤 "Find apartments with parking"  
-🤖 "Here are apartments with parking spaces..."
+# LLM keys (UI uses Cohere by default)
+COHERE_API_KEY=your_cohere_api_key_here
+# Or via settings module prefix
+ZAMEEN_COHERE_API_KEY=your_cohere_api_key_here
+# Optional: for CLI modes in scripts/query_rag.py
+ZAMEEN_GROQ_API_KEY=your_groq_api_key_here
 
-👤 "What's available in Phase 7?"
-🤖 "I found several properties in Bahria Town Phase 7..."
+# Web UI server
+PORT=8000
+HOST=0.0.0.0
 ```
 
-### API Usage
+3) Get data
 
-```python
-import requests
+Option A — Scrape from source (be considerate; see Legal/Ethics below):
 
-# Query the chat API
-response = requests.post("http://localhost:8000/api/message", json={
-    "message": "Show me 3-bedroom apartments under 15 million",
-    "chat_id": "user123"
-})
-
-result = response.json()
-print(result["response"])  # AI response with property details
+```powershell
+python scripts/scrape_listings.py --start-url $env:ZAMEEN_START_URL --max-pages 8
 ```
 
-### Natural Language Query Examples
+This writes:
+- data/raw/zameen_phase7_progress.json (incremental)
+- data/raw/zameen_phase7_raw.json (final JSON array)
+- data/raw/template_max_fields.json (example with most fields)
 
-The system understands various query formats:
-- **Budget-based**: "Houses under 30 million", "Properties between 20-40 million"
-- **Feature-based**: "Apartments with parking", "Houses with gardens"
-- **Size-based**: "3 bedroom houses", "10 marla properties"
-- **Location-based**: "Properties near schools", "Phase 7 apartments"
-- **Investment-focused**: "Good rental properties", "Investment opportunities"
+Option B — Use an existing raw file
 
-## 🔧 Configuration
+If you already have data/raw/zameen_phase7_raw.json, skip scraping.
 
-### Environment Variables
+4) Clean, canonicalize, and chunk
 
-```bash
-# API Configuration (Required)
-COHERE_API_KEY=your_cohere_api_key                # Required for LLM inference
-ZAMEEN_COHERE_API_KEY=your_cohere_api_key         # Same key for Pydantic settings
-
-# Optional API Keys
-GROQ_API_KEY=your_groq_api_key                    # Alternative LLM provider (faster)
-
-# Flask Configuration
-FLASK_ENV=production                              # production/development
-FLASK_DEBUG=false                                 # true/false
-SECRET_KEY=your_secure_secret_key                 # Auto-generated for security
-PORT=8000                                         # Application port
-HOST=0.0.0.0                                      # Host address
-
-# Database Configuration (Auto-configured)
-ZAMEEN_CHROMA_PERSIST_DIR=./chromadb_data         # Vector database location
-ZAMEEN_COLLECTION_NAME=zameen_listings            # Collection name
-ZAMEEN_EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2  # Embedding model
+```powershell
+python scripts/clean_and_enrich.py --input data/raw/zameen_phase7_raw.json --processed-out data/processed/zameen_phase7_processed.json --chunks-out data/processed/zameen_phase7_chunks.jsonl
 ```
 
-### Getting API Keys
+5) Embed and store vectors in ChromaDB
 
-1. **Cohere API Key** (Required):
-   - Visit [cohere.ai](https://cohere.ai)
-   - Sign up for free account
-   - Get your API key from dashboard
-   - Free tier includes 100 requests/minute
-
-2. **Groq API Key** (Optional, for faster responses):
-   - Visit [groq.com](https://groq.com)
-   - Sign up and get API key
-   - Provides faster inference than Cohere
-
-### Advanced Configuration
-
-```python
-# config.py - Customize application behavior
-class Settings(BaseSettings):
-    # Data processing
-    max_listings_per_session: int = 1000
-    batch_size: int = 100
-    
-    # Vector database
-    embedding_dimension: int = 384
-    similarity_threshold: float = 0.7
-    
-    # Web scraping
-    delay_between_requests: float = 1.0
-    max_retries: int = 3
+```powershell
+python scripts/embed_and_store.py --input data/processed/zameen_phase7_chunks.jsonl --processed data/processed/zameen_phase7_processed.json --collection zameen_listings --model sentence-transformers/all-mpnet-base-v2
 ```
 
-## 📈 Performance & Metrics
+This creates/updates a persistent DB at chromadb_data/ and prints a few verification queries.
 
-### Current Database Statistics
-- **🏠 Properties Indexed**: 160+ Bahria Town Phase 7 listings
-- **📊 Vector Embeddings**: 800+ document chunks for semantic search
-- **⚡ Query Response Time**: Sub-second (< 0.5s average)
-- **💾 Database Size**: ~9MB ChromaDB storage
-- **🔄 Search Accuracy**: High semantic similarity matching
+6) Launch the Web UI
 
-### Performance Benchmarks
-- **Average Query Processing**: ~300ms
-- **Embedding Generation**: Real-time during queries
-- **Memory Usage**: ~1.5GB for full operation
-- **Concurrent Users**: Supports 20+ simultaneous chat sessions
-- **API Response**: 200ms average for chat messages
-
-### System Requirements
-- **Minimum RAM**: 2GB
-- **Recommended RAM**: 4GB+ for optimal performance
-- **Storage**: 100MB for application + 10MB for database
-- **CPU**: Modern multi-core processor recommended
-
-## 🛡️ Security & Best Practices
-
-### Data Protection
-- **Rate Limiting**: Respectful web scraping with configurable delays
-- **Input Validation**: Comprehensive validation of user inputs
-- **Error Handling**: Robust exception handling throughout the pipeline
-- **Logging**: Comprehensive logging for monitoring and debugging
-
-### Production Considerations
-- **API Authentication**: JWT-based authentication for production use
-- **CORS Configuration**: Configurable cross-origin resource sharing
-- **Health Checks**: Built-in health monitoring endpoints
-- **Monitoring**: Integration-ready for application performance monitoring
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Setup
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make your changes**: Follow our coding standards
-4. **Add tests**: Ensure your changes are tested
-5. **Commit your changes**: `git commit -m 'Add amazing feature'`
-6. **Push to the branch**: `git push origin feature/amazing-feature`
-7. **Open a Pull Request**: Describe your changes and their impact
-
-### Development Guidelines
-
-- **Code Style**: Follow PEP 8 Python style guidelines
-- **Testing**: Write tests for new features and bug fixes
-- **Documentation**: Update documentation for any API changes
-- **Commit Messages**: Use conventional commit format
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-python -m pytest tests/
-
-# Run with coverage
-python -m pytest tests/ --cov=. --cov-report=html
-
-# Run specific test categories
-python -m pytest tests/test_scraping.py -v
-python -m pytest tests/test_rag.py -v
-```
-
-## 📚 Documentation
-
-- **🌐 [Live Demo](http://localhost:8000)**: Try the application locally
-- **⚙️ [Setup Guide](SETUP_GUIDE.md)**: Detailed installation instructions  
-- **🚀 [Deployment Guide](DEPLOYMENT.md)**: Production deployment instructions
-- **🔧 [Configuration Reference](config.py)**: Complete configuration options
-- **� [Database Status](check_vector_db_status.py)**: Check database health
-
-## 🧪 Testing
-
-```bash
-# Check if everything is working
-python check_vector_db_status.py
-
-# Run the application
+```powershell
 python web_ui/app.py
-
-# Test the chat API
-python -c "
-import requests
-response = requests.post('http://localhost:8000/api/message', 
-    json={'message': 'Hello', 'chat_id': 'test'})
-print(response.json())
-"
+# or
+./start.bat
 ```
 
-## 🚀 Deployment
+- UI: http://localhost:8000/
+- Health: http://localhost:8000/health
 
-### 🌐 Render.com (Recommended)
+If you see an error about missing Cohere key, ensure your .env contains COHERE_API_KEY (or ZAMEEN_COHERE_API_KEY).
 
-PropertyGuru is optimized for Render.com deployment with `render.yaml` configuration:
 
-1. **Fork/Clone the repository**
-2. **Connect to Render.com**
-3. **Set environment variables**:
-   - `COHERE_API_KEY`: Your Cohere API key
-   - `SECRET_KEY`: Auto-generated by Render
-4. **Deploy**: Automatic deployment from `render.yaml`
+## Web UI — What it does
 
-### 🐳 Docker Deployment
+- POST /api/message accepts { chat_id, message, store_history } and returns an assistant reply.
+- The server builds a short conversation history and uses RAG over ChromaDB to find matching listings.
+- The answer text is intentionally brief; the UI separately renders a neat table of matching properties (title, price, location, link), honoring requested counts (e.g., “show me 1 property”).
+- GET /health exposes status for monitoring (API key present, vector DB folder exists, etc.).
 
-```bash
-# Build and run with Docker
-docker build -t propertyguru .
-docker run -p 8000:8000 -e COHERE_API_KEY=your_key propertyguru
+Defaults
+- Port: 8000 (env PORT)
+- Host: 0.0.0.0 (env HOST)
+- LLM engine: Cohere (model: command-r-plus)
 
-# Or use Docker Compose
-docker-compose up
+
+## Programmatic API (optional)
+
+There’s a minimal FastAPI app at rag_app/app.py:
+
+- Run: uvicorn rag_app.app:app --host 0.0.0.0 --port 9000
+- POST /query with body: { "question": "...", "k": 5, "collection": "zameen_listings" }
+- Returns top‑k matches with text + metadata
+
+This API uses Chroma’s built‑in embedding function (SentenceTransformerEmbeddingFunction) with the configured model.
+
+
+## Configuration
+
+All configuration is centralized in config.py via pydantic‑settings and .env support.
+
+Key settings (env prefix ZAMEEN_):
+- start_url: Seed listing page for scraping
+- embedding_model: Sentence-Transformers model (e.g., sentence-transformers/all-mpnet-base-v2)
+- collection_name: ChromaDB collection (default: zameen_listings)
+- chroma_persist_dir: Persistence path (default: chromadb_data/)
+- user_agent, requests_timeout: Scraper HTTP behavior
+- cohere_api_key, groq_api_key: LLM API keys
+
+Note: The Flask UI also looks for COHERE_API_KEY and ZAMEEN_COHERE_API_KEY.
+
+
+## CLI: Query via RAG
+
+You can test RAG from the terminal without the UI:
+
+```powershell
+python scripts/query_rag.py --collection zameen_listings --query "3 bed apartment near park in Phase 7" --k 5 --embedding-model sentence-transformers/all-mpnet-base-v2 --llm-engine cohere --cohere-model command-r-plus --cohere-api-key $env:COHERE_API_KEY --explain
 ```
 
-### 📦 Heroku Deployment
+The script:
+- Normalizes location terms (e.g., “River Hills”)
+- Extracts a requested number (“show me 3 ...”)
+- Builds a compact property context from retrieved chunks
+- Calls the chosen LLM to craft a short, helpful reply
 
-```bash
-# Deploy to Heroku
-heroku create your-app-name
-heroku config:set COHERE_API_KEY=your_key
-git push heroku main
+
+## Docker
+
+Build and run locally:
+
+```powershell
+# Build image
+docker build -t propertyguru:local .
+
+# Run (reads .env if provided)
+docker run --rm -p 8000:8000 --env-file .env propertyguru:local
 ```
 
-### ⚡ Vercel Deployment
+docker-compose is also provided for convenience.
 
-Configured for serverless deployment with `vercel.json`:
 
-```bash
-# Deploy to Vercel
-npm i -g vercel
-vercel
-```
+## Testing
 
-### 🔧 Environment Variables for Production
+Basic tests live under tests/. To run:
 
-Set these variables in your deployment platform:
-
-```bash
-COHERE_API_KEY=your_cohere_api_key     # Required
-SECRET_KEY=random_secure_key           # Auto-generated
-FLASK_ENV=production                   # Production mode
-FLASK_DEBUG=false                      # Disable debug
+```powershell
+pytest -q
 ```
 
 
-## 🙏 Acknowledgments
+## Troubleshooting
 
-- **🏠 Zameen.com**: Property data source for Bahria Town Phase 7
-- **🤖 Cohere**: Advanced language model for conversational AI
-- **⚡ Groq**: High-speed inference for optimal performance
-- **🔍 Sentence Transformers**: Semantic embedding technology
-- **📊 ChromaDB**: Vector database for similarity search
-- **🌐 Hugging Face**: Transformer models and embeddings
-- **🐍 Python Community**: Amazing ecosystem of ML/AI libraries
+- UI says “Cohere API key missing”
+  - Add COHERE_API_KEY (or ZAMEEN_COHERE_API_KEY) to .env and restart
+- Retrieval returns empty or irrelevant results
+  - Ensure you ran the full pipeline: clean_and_enrich → embed_and_store
+  - Verify chromadb_data/ exists and contains a collection named zameen_listings
+  - Confirm the embedding model used during query matches the one used to embed
+- ChromaDB schema or compatibility errors
+  - Stop the app, delete chromadb_data/, and re‑run embeddings
+- Slow embeddings
+  - Install a CUDA build of PyTorch; scripts auto‑detect GPU if available
+
+
+## Legal & Ethics
+
+- This project includes a scraper for educational/demo purposes.
+- Before scraping any website, always review and comply with its Terms of Service and robots.txt rules. Rate‑limit and cache responsibly.
+- The scraper’s robots checks are disabled in code per user requirements; if you intend to use this beyond local demos, re‑enable checks and adopt polite crawling.
+
+
+## Notes
+
+- The web UI routes are in web_ui/app.py (Flask).
+- The RAG logic (retrieval, prompting, helpers) is in scripts/query_rag.py.
+- You can adjust prompt behavior and filters there if you want stricter type/price handling.
+- For production, run the Flask app with a production WSGI (e.g., gunicorn) and a reverse proxy.
+
 
 ---
 
-<div align="center">
-  <p><strong>Built with ❤️ for intelligent real estate search</strong></p>
-  <p>⭐ Star this repo if you find it helpful! ⭐</p>
-  <p>🚀 <a href="https://render.com">Deploy to Render</a> | 🐳 <a href="Dockerfile">Docker Ready</a> | 💬 <a href="http://localhost:8000">Try Demo</a></p>
-</div>
-#   P r o p e r t y - G u r u R A G  
- 
+If you want this README tailored further (screenshots, branding, CI badges), let me know the details and I’ll refine it. 

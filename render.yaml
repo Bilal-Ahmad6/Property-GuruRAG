@@ -3,17 +3,18 @@ services:
     name: propertyguru
     runtime: python3
     buildCommand: pip install -r requirements.txt
-    startCommand: python web_ui/app.py
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 web_ui.app:app
     plan: free
     healthCheckPath: /health
-    env:
+    envVars:
       - key: FLASK_ENV
         value: production
       - key: FLASK_DEBUG
         value: false
       - key: HOST
         value: 0.0.0.0
-    envVars:
+      - key: ZAMEEN_CHROMA_PERSIST_DIR
+        value: /app/data/chromadb_data
       - key: COHERE_API_KEY
         sync: false
       - key: GROQ_API_KEY
