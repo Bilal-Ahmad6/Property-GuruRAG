@@ -1631,5 +1631,161 @@
         ]
       }
     }
+  ],
+  "20250812111056646564": [
+    {
+      "role": "user",
+      "content": "show me houses for sale in spring north",
+      "ts": "2025-08-12T11:10:56.646564"
+    },
+    {
+      "role": "assistant",
+      "content": "I found 1 house for sale in Spring North.",
+      "ts": "2025-08-12T11:10:59.912428",
+      "meta": {
+        "mode": "retrieval",
+        "requested_number": null,
+        "timings": {
+          "embed_ms": 96.81349998572841,
+          "retrieve_ms": 330.06519998889416,
+          "generate_ms": 2016.8971000239253,
+          "total_ms": 3182.986100029666
+        },
+        "retrieved": [
+          {
+            "listing_id": "3fab758789b8139579c9d88ceb096cc37c59d16b",
+            "title": "Spacious 900 Square Feet Flat Available For sale In Bahria Spring North",
+            "distance": 0.42457112669944763
+          },
+          {
+            "listing_id": "4991852cf26567355a50a1e311f66859df298cd4",
+            "title": "Flat Of 416 Square Feet In Bahria Spring North Is Available",
+            "distance": 0.5081281661987305
+          },
+          {
+            "listing_id": "3fab758789b8139579c9d88ceb096cc37c59d16b",
+            "title": "Spacious 900 Square Feet Flat Available For sale In Bahria Spring North",
+            "distance": 0.5649430751800537
+          },
+          {
+            "listing_id": "e0690ead457c896f514fef549a2965c5e4f1d479",
+            "title": "Elegant Perfect Location 2 Bed Apartment For Sale In Spring North Phase 7",
+            "distance": 0.6019502282142639
+          },
+          {
+            "listing_id": "b9f4d4c46f3b63588afb367c0d0c8bf4d0cba764",
+            "title": "Bahria Town, 24 Marla House, Designer House Perfectly Constructed",
+            "distance": 0.6161795258522034
+          }
+        ],
+        "listings": [
+          {
+            "listing_id": "3fab758789b8139579c9d88ceb096cc37c59d16b",
+            "title": "Spacious 900 Square Feet Flat Available For sale In Bahria Spring North",
+            "price": "PKR 20,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_spring_north_spacious_900_square_feet_flat_available_for_sale_in_bahria_spring_north-52613930-8322-1.html",
+            "amenities": [
+              "Main Features Lobby in Building Double Glazed Windows Central Air Conditioning Central Heating Flooring Waste Disposal Service Elevators in Building Other Main Features",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Waste Disposal",
+              "Service Elevators in Building"
+            ]
+          },
+          {
+            "listing_id": "4991852cf26567355a50a1e311f66859df298cd4",
+            "title": "Flat Of 416 Square Feet In Bahria Spring North Is Available",
+            "price": "PKR 6,500,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_spring_north_flat_of_416_square_feet_in_bahria_spring_north_is_available-52185025-8322-1.html",
+            "amenities": [
+              "Main Features Built in year : 2023 Parking Spaces : 1 Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Other Main Features Furnished",
+              "Built in year : 2023",
+              "Parking Spaces : 1",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Electricity Backup"
+            ]
+          },
+          {
+            "listing_id": "3fab758789b8139579c9d88ceb096cc37c59d16b",
+            "title": "Spacious 900 Square Feet Flat Available For sale In Bahria Spring North",
+            "price": "PKR 20,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_spring_north_spacious_900_square_feet_flat_available_for_sale_in_bahria_spring_north-52613930-8322-1.html",
+            "amenities": [
+              "Main Features Lobby in Building Double Glazed Windows Central Air Conditioning Central Heating Flooring Waste Disposal Service Elevators in Building Other Main Features",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring",
+              "Waste Disposal",
+              "Service Elevators in Building"
+            ]
+          },
+          {
+            "listing_id": "e0690ead457c896f514fef549a2965c5e4f1d479",
+            "title": "Elegant Perfect Location 2 Bed Apartment For Sale In Spring North Phase 7",
+            "price": "PKR 9,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "sqft",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_spring_north_elegant_perfect_location_2_bed_apartment_for_sale_in_spring_north_phase_7-52346465-8322-1.html",
+            "amenities": [
+              "Main Features Built in year : 2024 Parking Spaces Lobby in Building Double Glazed Windows Central Air Conditioning Central Heating Flooring Electricity Backup Waste Disposal Floor Floors in Building : 3 Other Main Features",
+              "Built in year : 2024",
+              "Parking Spaces",
+              "Lobby in Building",
+              "Double Glazed Windows",
+              "Central Air Conditioning",
+              "Central Heating",
+              "Flooring"
+            ]
+          },
+          {
+            "listing_id": "b9f4d4c46f3b63588afb367c0d0c8bf4d0cba764",
+            "title": "Bahria Town, 24 Marla House, Designer House Perfectly Constructed",
+            "price": "PKR 150,000,000",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area_size": null,
+            "area_unit": "marla",
+            "location": null,
+            "url": "https://www.zameen.com/Property/bahria_town_phase_7_bahria_spring_north_bahria_town_24_marla_house_designer_house_perfectly_constructed-52780548-8322-1.html",
+            "amenities": [
+              "Main Features Built in year : 2025 Parking Spaces : 4 Flooring Electricity Backup Other Main Features",
+              "Built in year : 2025",
+              "Parking Spaces : 4",
+              "Flooring",
+              "Electricity Backup",
+              "Other Main Features",
+              "Rooms Bedrooms : 5 Bathrooms : 7 Servant Quarters : 1 Drawing Room Dining Room Kitchens : 2 Study Room Store Rooms : 1 Other Rooms",
+              "Bedrooms : 5"
+            ]
+          }
+        ]
+      }
+    }
   ]
 }

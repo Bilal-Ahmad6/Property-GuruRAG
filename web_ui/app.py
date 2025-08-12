@@ -34,9 +34,13 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-key-change-in-production
 # Log the port for Render debugging
 _render_port = os.getenv('PORT')
 if _render_port:
-    app.logger.info(f"[Render] App will be served on $PORT={_render_port} (set by Render)")
+    # Check if PORT is a template variable that wasn't resolved
+    if _render_port.startswith("${") or _render_port.startswith("$"):
+        app.logger.warning(f"[Render] PORT environment variable appears to be unresolved template: {_render_port}")
+    else:
+        app.logger.info(f"[Render] App will be served on PORT={_render_port} (set by Render)")
 else:
-    app.logger.warning("[Render] $PORT environment variable is not set! App may not be reachable by Render health checks.")
+    app.logger.warning("[Render] PORT environment variable is not set! App may not be reachable by Render health checks.")
 
 # Configure logging for production
 if not app.debug:
@@ -162,8 +166,6 @@ def health_check():
             'timestamp': datetime.now().isoformat()
         }
         return jsonify(error_status), 500
-    except Exception as e:
-        return jsonify({'status': 'unhealthy', 'error': str(e)}), 503
 
 
 @app.route('/api/debug/status')
@@ -391,5 +393,27 @@ def message():
 if __name__ == "__main__":
     # Only run the Flask dev server if not running under Gunicorn
     if "GUNICORN_CMD_ARGS" not in os.environ:
-        port = int(os.environ.get("PORT", 8000))
+        # Robust PORT handling for deployment environments
+        port_env = os.environ.get("PORT", "10000")
+        
+        # Handle cases where PORT might be set to "${PORT}" or other invalid values
+        try:
+            # Remove common template patterns that might not be resolved
+            if port_env.startswith("${") and port_env.endswith("}"):
+                port_env = "10000"  # Fallback to default
+            elif port_env.startswith("$"):
+                port_env = "10000"  # Fallback to default
+            
+            port = int(port_env)
+            
+            # Validate port range
+            if port < 1 or port > 65535:
+                port = 10000
+                
+        except (ValueError, TypeError):
+            # If conversion fails, use default port
+            port = 10000
+            app.logger.warning(f"Invalid PORT value '{port_env}', using default port 10000")
+        
+        app.logger.info(f"Starting Flask app on 0.0.0.0:{port}")
         app.run(host="0.0.0.0", port=port, debug=True)
