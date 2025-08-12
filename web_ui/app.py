@@ -388,5 +388,8 @@ def message():
 
     return jsonify({'chat_id': chat_id, 'assistant_message': assistant_entry, 'messages': history, 'title': history[0]['content'] if history and history[0]['role']=='user' else 'New Conversation'})
 
-
-
+if __name__ == "__main__":
+    # Only run the Flask dev server if not running under Gunicorn
+    if "GUNICORN_CMD_ARGS" not in os.environ:
+        port = int(os.environ.get("PORT", 8000))
+        app.run(host="0.0.0.0", port=port, debug=True)
