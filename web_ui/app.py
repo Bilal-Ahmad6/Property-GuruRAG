@@ -27,8 +27,16 @@ from config import settings  # type: ignore
 
 app = Flask(__name__)
 
-# Configure secret key for session security
+
+# IMPORTANT: Do NOT run Flask's built-in dev server in production. Always use Gunicorn with $PORT.
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-key-change-in-production')
+
+# Log the port for Render debugging
+_render_port = os.getenv('PORT')
+if _render_port:
+    app.logger.info(f"[Render] App will be served on $PORT={_render_port} (set by Render)")
+else:
+    app.logger.warning("[Render] $PORT environment variable is not set! App may not be reachable by Render health checks.")
 
 # Configure logging for production
 if not app.debug:
