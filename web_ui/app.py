@@ -28,7 +28,7 @@ from config import settings  # type: ignore
 app = Flask(__name__)
 
 
-# IMPORTANT: Do NOT run Flask's built-in dev server in production. Always use Gunicorn with $PORT.
+# IMPORTANT: Do NOT run Flask's built-in dev server in production. Always use Gunicorn with PORT env var.
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-key-change-in-production')
 
 # Log the port for Render debugging
