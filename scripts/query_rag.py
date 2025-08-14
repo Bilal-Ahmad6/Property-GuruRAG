@@ -3,8 +3,10 @@ import json
 import random
 import sys
 import time
+import re
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
+from functools import lru_cache
 
 import chromadb
 from sentence_transformers import SentenceTransformer  # type: ignore
@@ -220,23 +222,8 @@ def graceful_error_handling(func):
 @graceful_error_handling
 def enhanced_retrieve(collection, query: str, k: int, embedding_model: str, user_prefs: UserPreferences = None, filters: dict = None) -> Dict[str, List]:
     """Enhanced retrieval with user preferences, filters, and error handling"""
-    # Boost query with user preferences
-    if user_prefs:
-        pref_filters = user_prefs.get_personalized_filters()
-        if pref_filters.get('preferred_locations'):
-            # Add preferred locations to query for better relevance
-            query += f" {' '.join(pref_filters['preferred_locations'])}"
-    
-    # Enhance query with property type for better retrieval
-    if filters and 'property_type' in filters:
-        property_type = filters['property_type']
-        if property_type == 'house':
-            query += " house home villa bungalow marla"
-        elif property_type == 'apartment':
-            query += " apartment flat unit"
-    
-    # Use the original retrieve function
-    return retrieve(collection, query, k, embedding_model)
+    # Use the new advanced retrieval by default
+    return enhanced_retrieve_v2(collection, query, k, embedding_model, user_prefs, filters)
 
 
 def is_casual_greeting_or_irrelevant(query: str) -> bool:

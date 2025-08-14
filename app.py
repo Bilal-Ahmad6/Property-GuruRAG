@@ -48,7 +48,7 @@ class Settings(BaseSettings):
         return Path.cwd() / "chromadb_data"
 
     # Models / RAG
-    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    embedding_model: str = "sentence-transformers/all-mpnet-base-v2"
     collection_name: str = "zameen_listings"
 
     # HTTP
