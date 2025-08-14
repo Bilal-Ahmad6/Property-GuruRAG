@@ -12,10 +12,18 @@ gunicorn>=21.2.0,<22.0.0    # Production WSGI server
 # Data handling / utilities
 pandas>=2.2.2               # Optional tabular transforms (flexible version)
 python-dateutil==2.9.0.post0
+numpy>=1.24.0               # Required for advanced embeddings
 
-# Embeddings + vector store
-sentence-transformers>=2.2.2,<3.0.0  # Embedding models (compatible range)
-chromadb==1.0.15              # Persistent vector DB - FIXED VERSION
+# Embeddings + vector store (upgraded for better accuracy)
+sentence-transformers>=2.7.0,<3.0.0  # Latest embedding models with better accuracy
+chromadb>=1.2.0,<2.0.0      # Updated ChromaDB with performance improvements
+torch>=2.0.0                # PyTorch for better embedding performance
+transformers>=4.30.0        # Latest transformers for model support
+
+# Enhanced RAG capabilities
+scikit-learn>=1.3.0         # For advanced similarity calculations
+faiss-cpu>=1.7.4           # Optional: Fast similarity search
+rank-bm25>=0.2.2           # Hybrid search capabilities
 
 # LangChain toolkit (updated to latest compatible versions)
 langchain>=0.2.11,<0.4.0

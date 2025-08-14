@@ -23,8 +23,8 @@ class Settings(BaseSettings):
     processed_dir: Path = Path("data/processed")
     chroma_persist_dir: Path = Path("chromadb_data")
 
-    # Models / RAG
-    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    # Models / RAG - Upgraded to more accurate model
+    embedding_model: str = "sentence-transformers/all-mpnet-base-v2"
     collection_name: str = "zameen_listings"
 
     # HTTP

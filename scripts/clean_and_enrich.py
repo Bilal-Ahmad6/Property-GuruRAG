@@ -19,6 +19,32 @@ from processor.helpers import normalize_whitespace, parse_float_from_text  # typ
 JsonVal = Union[str, int, float, Dict[str, Any], List[Any]]
 
 
+def clean_summary_text(summary_text: str) -> str:
+    """Clean summary text by removing JavaScript and data layer noise."""
+    if not summary_text or summary_text.strip() == "not provided":
+        return "not provided"
+    
+    # Remove JavaScript data layer content
+    clean_text = re.sub(r"window\['dataLayer'\].*?;", "", summary_text, flags=re.DOTALL)
+    
+    # Remove other JavaScript patterns
+    clean_text = re.sub(r"window\[.*?\].*?;", "", clean_text, flags=re.DOTALL)
+    clean_text = re.sub(r"\{\\u[0-9a-fA-F]{4}.*?\}", "", clean_text)
+    
+    # Clean up remaining artifacts
+    clean_text = re.sub(r"\\u[0-9a-fA-F]{4}", "", clean_text)
+    clean_text = re.sub(r"\|\s*Area:\s*$", "", clean_text.strip())
+    
+    # Normalize whitespace
+    clean_text = re.sub(r'\s+', ' ', clean_text).strip()
+    
+    # If text is too short after cleaning, mark as not provided
+    if len(clean_text) < 20:
+        return "not provided"
+    
+    return clean_text
+
+
 def stable_listing_id(url: str) -> str:
     if not url:
         url = ""
@@ -246,12 +272,20 @@ def as_text_summary(c: Dict[str, Any], location: str) -> str:
     parts: List[str] = []
     parts.append(f"Title: {c.get('title')}")
     parts.append(f"Price: {c.get('price_raw')}")
-    if c.get("area_raw") and c.get("area_raw") != "not provided":
-        parts.append(f"Area: {c.get('area_raw')}")
+    
+    # Clean the area field to remove JavaScript noise
+    area_raw = c.get("area_raw", "")
+    if area_raw and area_raw != "not provided":
+        clean_area = clean_summary_text(area_raw)
+        if clean_area != "not provided":
+            parts.append(f"Area: {clean_area}")
+    
     if location and location != "not provided":
         parts.append(f"Location: {location}")
     parts.append(f"Link: {c.get('url')}")
-    return " | ".join(parts)
+    
+    result = " | ".join(parts)
+    return clean_summary_text(result)
 
 
 def as_text_specs(c: Dict[str, Any]) -> str:

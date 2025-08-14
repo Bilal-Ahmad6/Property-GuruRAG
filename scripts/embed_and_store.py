@@ -194,9 +194,14 @@ def run(
             print(f"    text: {snippet}{'...' if doc and len(doc) > 220 else ''}")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Embed chunks and store in ChromaDB")
-    parser.add_argument("--input", required=True, type=Path, help="Path to chunks JSONL file")
+def main(argv: List[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Embed and store chunks in ChromaDB")
+    parser.add_argument(
+        "--input",
+        type=Path,
+        default=Path("data/processed/zameen_phase7_chunks_improved.jsonl"),  # Use improved chunks
+        help="Path to chunks JSONL file",
+    )
     parser.add_argument(
         "--processed",
         type=Path,
@@ -216,7 +221,7 @@ def main() -> int:
         default=256,
         help="Batch size for upserting into Chroma",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     run(args.input, args.processed, args.collection, args.model, args.batch_size, args.upsert_batch_size)
     return 0
